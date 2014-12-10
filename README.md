@@ -1,3 +1,5 @@
+Not ready!
+
 # Sofort::Rails
 
 TODO: Write a gem description
