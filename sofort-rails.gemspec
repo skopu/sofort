@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["skopu"]
   spec.email         = ["sebastian.skopp@gmail.com"]
   spec.summary       = %q{Ruby Client for Sofort Api}
-  spec.description   = %q{The newest sofort Api}
-  spec.homepage      = ""
+  spec.description   = %q{Gem for use Sofort Api in Ruby. Payments and check details. SOFORT Überweisung - Sofort Api Banking}
+  spec.homepage      = "https://github.com/skopu/sofort"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
