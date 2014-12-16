@@ -25,12 +25,12 @@ Or install it yourself as:
   ```
   init api client
   ```ruby
-  client=Sofort::Client.new
+  client = Sofort::Client.new
   ```
 ### Example of pay
  you can set more attributes, please look at config/initializers/sofort.rb
   ```ruby
-  client.pay(12, 'skopu', { success_url: 'http://google.com', abort_url: 'https://google.com'})
+  client.pay(12, 'skopu', { success_url: 'http://google.com', abort_url: 'https://google.com' } )
   ```
   ```ruby
 => {"transaction"=>"89043-182942-5490DD29-53B3",
