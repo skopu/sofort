@@ -28,5 +28,8 @@ module Sofort
   @@country_code = "DE"
   @@currency_code = "EUR"
   @@reson = "Reason"
-
+  
+  def self.setup                                                 
+    yield self                                                   
+  end   
 end

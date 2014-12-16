@@ -11,6 +11,6 @@ Sofort.setup do |config|
   config.project_id = 'project_id'
   config.country_code = "DE"
   config.currency_code = "EUR"
-  config.reson = "Reason"
+  config.reason = "Reason"
 
 end

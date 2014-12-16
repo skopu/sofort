@@ -47,11 +47,12 @@ module Sofort
     end
 
     def pay_xml(amount, name, opts)
-      reason = opts['reason'] || Sofort.reason
-      currency_code = opts['currency_code'] || Sofort.currency_code
-      country_code = opts['country_code'] ||  Sofort.country_code
-      success_url = opts['success_url'] ||  Sofort.success_url
-      abort_url = opts['abort_url'] ||  Sofort.abort_url
+      reason = opts[:reason] || Sofort.reason
+      currency_code = opts[:currency_code] || Sofort.currency_code
+      country_code = opts[:country_code] ||  Sofort.country_code
+      success_url = opts[:success_url] ||  Sofort.success_url
+      abort_url = opts[:abort_url] ||  Sofort.abort_url
+      email_customer = opts[:email_customer] ||  Sofort.email_customer
 
       {
         amount: amount,
@@ -63,7 +64,7 @@ module Sofort
           holder: name,
           country_code: country_code
         },
-        email_customer: Sofort.email_customer,
+        email_customer: email_customer,
         notification_emails: {
           notification_email: Sofort.notification_email
         },
