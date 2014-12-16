@@ -19,12 +19,16 @@ Or install it yourself as:
     $ gem install sofort
 
 ## Usage
-
-
+ generate initializer file(confing/initializers/sofort.rb). You can change a lot of defaults
+  ```ruby
+  rails g sofort:install
+  ```
+  init api client
   ```ruby
   client=Sofort::Client.new
   ```
 ### Example of pay
+ you can set more attributes, please look at config/initializers/sofort.rb
   ```ruby
   client.pay(12, 'skopu', { success_url: 'http://google.com', abort_url: 'https://google.com'})
   ```
