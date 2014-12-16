@@ -73,7 +73,7 @@ Or install it yourself as:
    "iban"=>"DE50250700240444432900",
    "country_code"=>"DE"},
  "recipient"=>
-  {"holder"=>"Clean on Demand UG",
+  {"holder"=>"Company on Demand",
    "account_number"=>"12312312",
    "bank_code"=>"12312312",
    "bank_name"=>"Commerzbank AG",
