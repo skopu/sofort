@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Sofort::VERSION
   spec.authors       = ["skopu"]
   spec.email         = ["sebastian.skopp@gmail.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Ruby Client for Sofort Api}
+  spec.description   = %q{The newest sofort Api}
   spec.homepage      = ""
   spec.license       = "MIT"
 
