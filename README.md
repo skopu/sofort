@@ -1,6 +1,8 @@
 # Sofort
 
  Gem for use Sofort Api in Ruby. Payments and check details.
+ SOFORT Überweisung - Sofort Api Banking https://www.sofort.com/integrationCenter-eng-DE/content/view/full/2513
+
 
 ## Installation
 
