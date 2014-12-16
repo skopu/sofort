@@ -8,7 +8,7 @@ module Sofort
       desc "Creates a Sofort initializer to your application."
 
       def copy_initializer
-        template "sofort_rails.rb", "config/initializers/sofort.rb"
+        template "sofort.rb", "config/initializers/sofort.rb"
       end
 
       def show_readme
