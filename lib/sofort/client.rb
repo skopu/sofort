@@ -22,32 +22,7 @@ module Sofort
 
     def pay(amount, name, *args)
       opts = args.extract_options!.symbolize_keys!
-      reason = opts['reason'] || Sofort.reason
-      currency_code = opts['currency_code'] || Sofort.currency_code
-      country_code = opts['country_code'] ||  Sofort.country_code
-      success_url = opts['success_url'] ||  Sofort.success_url
-      abort_url = opts['abort_url'] ||  Sofort.abort_url
-
-      xml = {
-        amount: amount,
-        currency_code: currency_code,
-        reasons: {
-          reason: reason
-        },
-        sender: {
-          holder: name,
-          country_code: country_code
-        },
-        email_customer: Sofort.email_customer,
-        notification_emails: {
-          notification_email: Sofort.notification_email
-        },
-        success_url: success_url,
-        abort_url: abort_url,
-        su: '',
-        project_id: Sofort.project_id
-      }.to_xml(root: 'multipay', skip_types: true, dasherize: false)
-
+      xml = pay_xml(amount, name, opts)
       results = self.class.post(Sofort.base_url,  @options.merge(body: xml))
       results['new_transaction'].present? ? results['new_transaction'] : results
     end
@@ -69,6 +44,35 @@ module Sofort
       <transaction>#{token}</transaction>
       </transaction_request>
       eos
+    end
+
+    def pay_xml(amount, name, opts)
+      reason = opts['reason'] || Sofort.reason
+      currency_code = opts['currency_code'] || Sofort.currency_code
+      country_code = opts['country_code'] ||  Sofort.country_code
+      success_url = opts['success_url'] ||  Sofort.success_url
+      abort_url = opts['abort_url'] ||  Sofort.abort_url
+
+      {
+        amount: amount,
+        currency_code: currency_code,
+        reasons: {
+          reason: reason
+        },
+        sender: {
+          holder: name,
+          country_code: country_code
+        },
+        email_customer: Sofort.email_customer,
+        notification_emails: {
+          notification_email: Sofort.notification_email
+        },
+        success_url: success_url,
+        abort_url: abort_url,
+        su: '',
+        project_id: Sofort.project_id
+      }.to_xml(root: 'multipay', skip_types: true, dasherize: false)
+      
     end
   end
 end
