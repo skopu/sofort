@@ -55,6 +55,7 @@ module Sofort
       email_customer = opts[:email_customer] ||  Sofort.email_customer
       notification_email = opts[:notification_email] ||  Sofort.notification_email
       notification_url = opts[:notification_url] ||  Sofort.notification_url
+      user_variable = opts[:user_variable] ||  Sofort.user_variable
 
       {
         amount: amount,
@@ -67,6 +68,9 @@ module Sofort
           country_code: country_code
         },
         email_customer: email_customer,
+        user_variables: {
+          user_variable: user_variable
+        },
         notification_emails: {
           notification_email: notification_email
         },
