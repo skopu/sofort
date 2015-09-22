@@ -14,4 +14,6 @@ Sofort.setup do |config|
   config.currency_code = "EUR"
   config.reason = "Reason"
 
+  config.user_variable = 'user_variable'
+
 end
