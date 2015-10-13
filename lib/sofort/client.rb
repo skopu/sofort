@@ -57,6 +57,7 @@ module Sofort
       notification_email = opts[:notification_email] ||  Sofort.notification_email
       notification_url = opts[:notification_url] ||  Sofort.notification_url
       user_variable = opts[:user_variable] ||  Sofort.user_variable
+      project_id = opts[:project_id] ||  Sofort.project_id
 
       {
         amount: amount,
@@ -82,7 +83,7 @@ module Sofort
         success_url: success_url,
         abort_url: abort_url,
         su: '',
-        project_id: Sofort.project_id
+        project_id: project_id
       }.to_xml(root: 'multipay', skip_types: true, dasherize: false)
 
     end
