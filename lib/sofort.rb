@@ -1,23 +1,31 @@
 require 'sofort/version'
 require 'sofort/client'
+require 'active_support/core_ext/array/extract_options'
+require 'active_support/core_ext/hash/conversions'
+require 'active_support/core_ext/hash/keys'
 
 module Sofort
+  VALUES =  [:user_id, :api_key, :base_url, :abort_url,
+            :success_url, :notification_url, :email_customer,
+            :notification_email, :project_id, :country_code,
+            :currency_code, :reason, :language_code,:user_variable]
 
-  mattr_accessor :user_id
-  mattr_accessor :api_key
-  mattr_accessor :base_url
-  mattr_accessor :abort_url
-  mattr_accessor :success_url
-  mattr_accessor :notification_url
-  mattr_accessor :email_customer
-  mattr_accessor :notification_email
-  mattr_accessor :project_id
-  mattr_accessor :country_code
-  mattr_accessor :currency_code
-  mattr_accessor :reason
-  mattr_accessor :language_code
-  mattr_accessor :user_variable
-  
+  VALUES.each do |method|
+    class_eval(<<-EOS, __FILE__, __LINE__ + 1)
+      @@#{method} = nil unless defined? @@#{method}
+      def self.#{method}
+        @@#{method}
+      end
+
+      @@#{method} = nil unless defined? @@#{method}
+      def self.#{method}=(obj)
+        @@#{method} = obj
+      end
+    EOS
+
+  end
+
+
   @@user_id = 'sofort_user_id'
   @@api_key = 'api_key'
 
