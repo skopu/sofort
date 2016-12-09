@@ -30,7 +30,7 @@ Or install it yourself as:
 ### Example of pay
  you can set more attributes, please look at config/initializers/sofort.rb
   ```ruby
-  client.pay(12, 'skopu', { success_url: 'http://google.com', abort_url: 'https://google.com' } )
+  client.pay(12, 'skopu', { success_url: 'http://google.com', abort_url: 'https://google.com', notification_url: 'https://google.com' } )
   ```
   ```ruby
 => {"transaction"=>"89043-182942-5490DD29-53B3",
@@ -91,6 +91,32 @@ Or install it yourself as:
      "status_reason"=>"sofort_bank_account_needed",
      "time"=>"2014-12-16T17:16:21+01:00"}}}
   ```
+## Pure ruby usage
+
+require 'sofort'
+require 'sofort/client'
+
+Sofort.setup do |config|
+  config.base_url = 'https://api.sofort.com/api/xml'
+  config.user_id = 'id'
+  config.api_key = 'key'
+  config.abort_url = 'http:/google.pl'
+  config.success_url = 'http:/google.pl'
+  config.notification_url = 'http:/google.pl'
+  config.language_code = 'de'
+  config.email_customer = 'sebastian.skopp@gmail.com'
+  config.notification_email = 'sebastian.skopp@gmail.com'
+  config.country_code = 'DE'
+  config.currency_code = 'EUR'
+  config.reason = 'Reason'
+  config.user_variable = 'user_variable'
+  config.project_id = 'project_id'
+end
+
+client = Sofort::Client.new
+
+client.pay(12, 'skopu', { success_url: 'http://google.com', abort_url: 'https://google.com', notification_url: 'https://google.com' } )
+
 ## Contributing
 
 1. Fork it ( https://github.com/skopu/sofort/fork )

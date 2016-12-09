@@ -9,7 +9,6 @@ Sofort.setup do |config|
   config.language_code = 'de'
   config.email_customer = 'email_customer'
   config.notification_email = 'notification_email'
-  config.project_id = 'project_id'
   config.country_code = 'DE'
   config.currency_code = 'EUR'
   config.reason = 'Reason'
