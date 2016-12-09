@@ -92,7 +92,7 @@ Or install it yourself as:
      "time"=>"2014-12-16T17:16:21+01:00"}}}
   ```
 ## Pure ruby usage
-
+```ruby
 require 'sofort'
 require 'sofort/client'
 
@@ -116,8 +116,10 @@ end
 client = Sofort::Client.new
 
 client.pay(12, 'skopu', { success_url: 'http://google.com', abort_url: 'https://google.com', notification_url: 'https://google.com' } )
-
+```
 ## Contributing
+
+please remember to @mention me ;)
 
 1. Fork it ( https://github.com/skopu/sofort/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
