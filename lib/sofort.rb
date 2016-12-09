@@ -15,7 +15,9 @@ module Sofort
   mattr_accessor :country_code
   mattr_accessor :currency_code
   mattr_accessor :reason
-
+  mattr_accessor :language_code
+  mattr_accessor :user_variable
+  
   @@user_id = 'sofort_user_id'
   @@api_key = 'api_key'
 

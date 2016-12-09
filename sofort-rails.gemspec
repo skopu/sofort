@@ -2,7 +2,7 @@
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'sofort/version'
-require "active_support/all"
+
 Gem::Specification.new do |spec|
   spec.name          = "sofort"
   spec.version       = Sofort::VERSION
