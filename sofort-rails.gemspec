@@ -24,6 +24,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "webmock", "~> 1.22.2"
   spec.add_dependency "httparty", "~> 0.13.7"
   spec.add_dependency "xml-simple", "~> 1.1.5"
-  spec.add_dependency "activesupport", "~> 4.2.6"
+  spec.add_dependency "activesupport", ">= 4.2, < 6.0"
   spec.add_dependency "builder", "~> 3.2.2"
 end
