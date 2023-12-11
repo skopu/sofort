@@ -6,7 +6,6 @@ Sofort.setup do |config|
   config.abort_url = 'abort_url'
   config.success_url = 'success_url'
   config.notification_url = 'notification_url'
-  config.language_code = 'de'
   config.email_customer = 'email_customer'
   config.notification_email = 'notification_email'
   config.country_code = 'DE'

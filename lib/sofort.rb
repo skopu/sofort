@@ -8,7 +8,7 @@ module Sofort
   VALUES =  [:user_id, :api_key, :base_url, :abort_url,
             :success_url, :notification_url, :email_customer,
             :notification_email, :project_id, :country_code,
-            :currency_code, :reason, :language_code,:user_variable]
+            :currency_code, :reason,:user_variable]
 
   VALUES.each do |method|
     class_eval(<<-EOS, __FILE__, __LINE__ + 1)
